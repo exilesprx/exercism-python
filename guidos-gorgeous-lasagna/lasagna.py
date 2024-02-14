@@ -48,4 +48,4 @@ def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
     Function that takes the number of layers in the lasagna and the actual minutes the lasagna has been in the oven as
     arguments and returns how many minutes it took to prepare and bake the lasagna.
     """
-    return (number_of_layers * PREPARATION_TIME) + elapsed_bake_time
+    return preparation_time_in_minutes(number_of_layers) + elapsed_bake_time

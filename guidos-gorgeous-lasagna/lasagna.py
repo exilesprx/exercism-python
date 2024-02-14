@@ -7,12 +7,11 @@ This is a module docstring, used to describe the functionality
 of a module and its functions and/or classes.
 """
 
+EXPECTED_BAKE_TIME = 40
+PREPARATION_TIME = 2
 
-#TODO: define the 'EXPECTED_BAKE_TIME' constant.
 
-
-#TODO: Remove 'pass' and complete the 'bake_time_remaining()' function below.
-def bake_time_remaining():
+def bake_time_remaining(elapsed_bake_time):
     """Calculate the bake time remaining.
 
     :param elapsed_bake_time: int - baking time already elapsed.
@@ -23,13 +22,30 @@ def bake_time_remaining():
     based on the `EXPECTED_BAKE_TIME`.
     """
 
-    pass
+    return EXPECTED_BAKE_TIME - elapsed_bake_time
 
 
-#TODO: Define the 'preparation_time_in_minutes()' function below.
-# You might also consider using 'PREPARATION_TIME' here, if you have it defined.
+def preparation_time_in_minutes(layers):
+    """Calculate the preparation time.
+
+    :param layers: int - the number of layers in the lasagna being prepared.
+    :return: int - the preparation time (in minutes) derived from 'PREPARATION_TIME'.
+
+    Function that takes the number of layers in the lasagna as an argument and
+    returns how many minutes it took to prepare the lasagna, based on the
+    `PREPARATION_TIME` constant.
+    """
+    return layers * PREPARATION_TIME
 
 
+def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
+    """Calculate the elapsed time.
 
-#TODO: define the 'elapsed_time_in_minutes()' function below.
-# Remember to add a docstring (you can copy and then alter the one from bake_time_remaining.)
+    :param number_of_layers: int - the number of layers in the lasagna being prepared.
+    :param elapsed_bake_time: int - baking time already elapsed.
+    :return: int - the elapsed time (in minutes) derived from 'elapsed_bake_time' and 'number_of_layers'.
+
+    Function that takes the number of layers in the lasagna and the actual minutes the lasagna has been in the oven as
+    arguments and returns how many minutes it took to prepare and bake the lasagna.
+    """
+    return (number_of_layers * PREPARATION_TIME) + elapsed_bake_time

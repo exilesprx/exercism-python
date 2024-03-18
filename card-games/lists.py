@@ -30,8 +30,8 @@ def list_contains_round(rounds, number):
     :param number: int - round number.
     :return: bool - was the round played?
     """
-    for round in rounds:
-        if round == number:
+    for rd in rounds:
+        if rd == number:
             return True
     return False
 
@@ -54,7 +54,7 @@ def approx_average_is_average(hand):
     actual_average = card_average(hand)
     hand_average = (hand[0] + hand[-1]) / 2
     middle_card = hand[len(hand) // 2]
-    return hand_average == actual_average or middle_card == actual_average
+    return actual_average in [hand_average, middle_card]
 
 
 def average_even_is_average_odd(hand):

@@ -52,8 +52,8 @@ def letter_grades(highest):
     """
     lowest_thresholds = []
     interval = round((highest - 41) / 4)
-    for i in range(4):
-        lowest_thresholds.append(41 + interval * i)
+    for increment in range(4):
+        lowest_thresholds.append(41 + interval * increment)
     return lowest_thresholds
 
 

@@ -42,10 +42,11 @@ def generate_seats(number):
     """
 
     seats_per_row = 4
-    rows = number // seats_per_row
-
-    if rows >= 13:
-        rows += 1
+    rows = (
+        number // seats_per_row + 1
+        if number // seats_per_row >= 13
+        else number // seats_per_row
+    )
 
     # handle full rows
     for i in range(1, rows + 1):
@@ -80,4 +81,5 @@ def generate_codes(seat_numbers, flight_id):
 
     """
     for seat in seat_numbers:
-        yield f"{seat}{flight_id}{'0'*(12 - len(seat + flight_id))}"
+        code = seat + flight_id
+        yield f"{code}{'0'*(12 - len(code))}"

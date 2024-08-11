@@ -79,5 +79,5 @@ def generate_codes(seat_numbers, flight_id):
     :return: generator - generator that yields 12 character long ticket codes.
 
     """
-
-    pass
+    for seat in seat_numbers:
+        yield f"{seat}{flight_id}{'0'*(12 - len(seat + flight_id))}"

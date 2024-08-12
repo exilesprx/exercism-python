@@ -20,12 +20,15 @@ class Robot:
 
     def move(self, instructions):
         for instruction in instructions:
-            if instruction == "L":
-                self._turn_left()
-            if instruction == "R":
-                self._turn_right()
-            if instruction == "A":
-                self._advance()
+            match instruction:
+                case "L":
+                    self._turn_left()
+                case "R":
+                    self._turn_right()
+                case "A":
+                    self._advance()
+                case _:
+                    raise ValueError("Invalid instruction")
 
     @property
     def direction(self):

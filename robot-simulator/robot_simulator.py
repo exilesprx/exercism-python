@@ -33,6 +33,8 @@ class Robot:
 
     @direction.setter
     def direction(self, direction):
+        if direction not in ("north", "east", "south", "west"):
+            raise ValueError("Invalid direction")
         self._direction = direction
 
     @property

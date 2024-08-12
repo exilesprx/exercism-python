@@ -21,19 +21,35 @@ class Robot:
     def move(self, instructions):
         for instruction in instructions:
             if instruction == "L":
-                self.__turn_left()
+                self._turn_left()
             if instruction == "R":
-                self.__turn_right()
+                self._turn_right()
             if instruction == "A":
-                self.__advance()
+                self._advance()
 
-    def __turn_left(self):
+    @property
+    def direction(self):
+        return self._direction
+
+    @direction.setter
+    def direction(self, direction):
+        self._direction = direction
+
+    @property
+    def coordinates(self):
+        return self._coordinates
+
+    @coordinates.setter
+    def coordinates(self, coordinates):
+        self._coordinates = coordinates
+
+    def _turn_left(self):
         self.direction = movement_manual[self.direction]["left"]
 
-    def __turn_right(self):
+    def _turn_right(self):
         self.direction = movement_manual[self.direction]["right"]
 
-    def __advance(self):
+    def _advance(self):
         x, y = self.coordinates
         self.coordinates = (
             x + movement_manual[self.direction]["advance"][0],

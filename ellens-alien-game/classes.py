@@ -48,9 +48,4 @@ def new_aliens_collection(positions):
 
     positions: tuple - a list of positions for new Aliens
     """
-    aliens = []
-    for position in positions:
-        x_coord, y_coord = position
-        aliens.append(Alien(x_coord, y_coord))
-
-    return aliens
+    return [Alien(position[0], position[1]) for position in positions]

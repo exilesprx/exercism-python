@@ -1,2 +1,3 @@
 def is_armstrong_number(number):
-    pass
+    return sum( int(n) ** len(str(number)) for n in str(number)) == number
+

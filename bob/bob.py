@@ -5,7 +5,7 @@ def response(hey_bob):
 
     if not hey_bob:
         return "Fine. Be that way!"
-    if is_question and is_yelling:
+    elif is_question and is_yelling:
         return "Calm down, I know what I'm doing!"
     elif is_question:
         return "Sure."

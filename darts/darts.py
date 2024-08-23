@@ -2,7 +2,7 @@ from math import sqrt
 
 
 def score(x, y):
-    dart_distance = sqrt(x**2 + y**2)
+    dart_distance = sqrt(x**2 + y**2)  # ** 0.5 is the same as sqrt
 
     if dart_distance <= 1:
         return 10
